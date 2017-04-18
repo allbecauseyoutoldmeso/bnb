@@ -11,14 +11,17 @@ get '/users/new' do
   erb :sign_up
 end
 
-post '/users/new' do
+post '/users' do
   @user = User.new(first_name: params[:first_name],
                    last_name: params[:last_name],
                    email: params[:email],
                    password: params[:password],
                    password_confirmation: params[:password_confirmation])
-  @user.save
-  redirect to '/apartments'
+  if @user.save
+    redirect to '/apartments'
+  else
+    erb :sign_up
+  end
 end
 
 get '/apartments' do
