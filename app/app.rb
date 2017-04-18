@@ -9,6 +9,12 @@ class Bnb < Sinatra::Base
 
   enable :sessions
 
+  helpers do
+    def current_user
+      @current_user ||= User.get(session[:user_id])
+    end
+  end
+
   get '/users/new' do
     erb :'users/sign_up'
   end
@@ -20,6 +26,7 @@ class Bnb < Sinatra::Base
                      password: params[:password],
                      password_confirmation: params[:password_confirmation])
     if @user.save
+      session[:user_id] = @user.id
       redirect to '/apartments'
     else
       flash.now[:errors] = @user.errors.full_messages
@@ -28,7 +35,8 @@ class Bnb < Sinatra::Base
   end
 
   get '/apartments' do
-    @user = User.first(id: session[:user_id])
+    # require 'pry'; binding.pry
+    # @user = User.first(id: session[:user_id])
     erb :apartments
   end
 
