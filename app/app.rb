@@ -5,6 +5,8 @@ require_relative 'datamapper_setup'
 
 class Bnb < Sinatra::Base
 
+  enable :sessions
+
 get '/users/new' do
   erb :sign_up
 end
@@ -14,8 +16,18 @@ post '/users/new' do
 end
 
 get '/apartments' do
+  @user = User.first(id: session[:user_id])
   erb :apartments
 end
 
+get '/sessions/log_in' do
+  erb :'sessions/log_in'
+end
+
+post '/sessions/log_in' do
+  user = User.first(email: params[:email])
+  session[:user_id] = user.id
+  redirect to '/apartments'
+end
 
 end
