@@ -1,9 +1,11 @@
 ENV['RACK_ENV'] = 'development'
 
 require 'sinatra/base'
+require 'sinatra/flash'
 require_relative 'datamapper_setup'
 
 class Bnb < Sinatra::Base
+  register Sinatra::Flash
 
   enable :sessions
 
@@ -20,6 +22,7 @@ post '/users' do
   if @user.save
     redirect to '/apartments'
   else
+    flash.now[:errors] = @user.errors.full_messages
     erb :sign_up
   end
 end
