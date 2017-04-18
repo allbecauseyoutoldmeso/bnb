@@ -35,9 +35,11 @@ class Bnb < Sinatra::Base
   end
 
   get '/apartments' do
-    # require 'pry'; binding.pry
-    # @user = User.first(id: session[:user_id])
-    erb :apartments
+    erb :'apartments/index'
+  end
+
+  get '/apartments/new' do
+    erb :'apartments/new'
   end
 
   get '/sessions/new' do
