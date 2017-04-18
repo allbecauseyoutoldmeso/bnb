@@ -2,8 +2,10 @@ ENV['RACK_ENV'] = 'test'
 
 require 'capybara/rspec'
 require 'database_cleaner'
+
 require_relative '../app/app.rb'
 require_relative './features/web_helper'
+
 
 Capybara.app = Bnb
 
