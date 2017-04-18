@@ -10,6 +10,10 @@ get '/users/new' do
 end
 
 post '/users/new' do
+  @user = User.new(first_name: params[:first_name],
+                   last_name: params[:last_name],
+                   email: params[:email])
+  @user.save
   redirect to '/apartments'
 end
 
