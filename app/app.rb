@@ -44,7 +44,7 @@ class Bnb < Sinatra::Base
       redirect to '/apartments'
     else
       flash.next[:error] = "Invalid username or password"
-      redirect '/session/log_in'
+      redirect '/sessions/new'
     end
   end
 end
