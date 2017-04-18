@@ -20,6 +20,7 @@ class Bnb < Sinatra::Base
                      password: params[:password],
                      password_confirmation: params[:password_confirmation])
     if @user.save
+      session[:user_id] = @user.id
       redirect to '/apartments'
     else
       flash.now[:errors] = @user.errors.full_messages
@@ -37,8 +38,13 @@ class Bnb < Sinatra::Base
   end
 
   post '/sessions' do
-    user = User.first(email: params[:email])
-    session[:user_id] = user.id
-    redirect to '/apartments'
+    if User.authentic?(params[:email], params[:password])
+      user = User.first(email: params[:email])
+      session[:user_id] = user.id
+      redirect to '/apartments'
+    else
+      flash.next[:error] = "Invalid username or password"
+      redirect '/sessions/new'
+    end
   end
 end
