@@ -1,8 +1,14 @@
 <h1 id='login_title'> Welcome to EEEK BnB. Please sign up below. </h1>
 
+<% if flash[:errors] && !flash[:errors].empty? %>
+  <% flash[:errors].each do |error| %>
+    <%= error %>
+  <% end %>
+<% end %>
+
 <div class='rowSec'>
  <section id='signup'>
- <form action='/users/new' method='post'>
+ <form action='/users' method='post'>
    <label for='first_name'>First Name
      <input type='text' name='first_name' required />
    </label>
