@@ -14,7 +14,8 @@ end
 post '/users/new' do
   @user = User.new(first_name: params[:first_name],
                    last_name: params[:last_name],
-                   email: params[:email])
+                   email: params[:email],
+                   password: params[:password])
   @user.save
   redirect to '/apartments'
 end
