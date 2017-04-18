@@ -9,6 +9,12 @@ class Bnb < Sinatra::Base
 
   enable :sessions
 
+  helpers do
+    def current_user
+      @current_user ||= User.get(session[:user_id])
+    end
+  end
+
   get '/users/new' do
     erb :'users/sign_up'
   end
@@ -29,8 +35,11 @@ class Bnb < Sinatra::Base
   end
 
   get '/apartments' do
-    @user = User.first(id: session[:user_id])
-    erb :apartments
+    erb :'apartments/index'
+  end
+
+  get '/apartments/new' do
+    erb :'apartments/new'
   end
 
   get '/sessions/new' do
