@@ -38,7 +38,6 @@ class Bnb < Sinatra::Base
   end
 
   post '/sessions' do
-    empty_params 
     if User.authentic?(params[:email], params[:password])
       user = User.first(email: params[:email])
       session[:user_id] = user.id
@@ -48,16 +47,4 @@ class Bnb < Sinatra::Base
       redirect '/sessions/new'
     end
   end
-
-  helpers do
-
-    def empty_params
-      if params[:email].empty? || params[:password].empty?
-        flash.next[:error] = "Please enter an email and password"
-        redirect '/sessions/new'
-      end
-    end
-
-  end
-
 end

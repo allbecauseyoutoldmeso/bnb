@@ -11,7 +11,7 @@ feature 'User log in' do
     visit '/sessions/new'
     click_button 'Log in'
     expect(current_path).to eq "/sessions/new"
-    expect(page).to have_content "Please enter an email and password"
+    expect(page).to have_content "Invalid username or password"
   end
 
   scenario 'with an invalid email' do
