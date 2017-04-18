@@ -11,3 +11,11 @@ def sign_up(first_name: "Roi",
   fill_in :password_confirmation, with: password_confirmation
   click_button("Sign up")
 end
+
+def log_in(email: "roi@makers.com",
+           password: "bosswithabeard")
+  visit '/sessions/new'
+  fill_in :email, with: email
+  fill_in :password, with: password
+  click_button("Log in")
+end
