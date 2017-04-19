@@ -5,10 +5,10 @@ class Bnb < Sinatra::Base
   end
 
   post '/profile/requests/confirm' do
-    booking = Booking.first(params[:booking_id])
-    booking.confirmed = true
-    booking.save
+    puts params[:booking_id]
+    booking = Booking.first(id: params[:booking_id])
+    booking.update(:confirmed => true)
     redirect '/profile/requests'
   end
-  
+
 end
