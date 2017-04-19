@@ -1,11 +1,47 @@
+<%if current_user %>
 <h1>Hello, <%=current_user.first_name%></h1>
+
+<form action="/sessions" method="post">
+  <input type="hidden" name="_method" value="delete">
+  <input type="submit" value="Log out">
+</form>
+
+<form action="/apartments/new">
+  <input type="submit" value="Add a property">
+</form>
+<% end %>
+
+<% if flash[:warning]%>
+  <div id="warning">
+    <%= flash[:warning]%>
+  </div>
+<% end %>
+
+<% if flash[:notice]%>
+  <div id="notice">
+    <%= flash[:notice]%>
+  </div>
+<% end %>
 
 <% if flash[:listing_error] %>
     <%= error %>
 <% end %>
 
 
+<h1> Listings </h1>
+<% @listings.each do |list|%>
+  <p>
+  Name: <%= list.name %>
+  </p>
+  <p>
+  Description: <%= list.description%>
+  </p>
+  <p>
+  Price per night: <%= list.price%>
+  </p>
+<%end%>
 
 <form action="/apartments/new" >
   <input type="submit" value="Add a property">
 </form>
+

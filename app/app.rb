@@ -6,8 +6,8 @@ require_relative 'datamapper_setup'
 
 class Bnb < Sinatra::Base
   register Sinatra::Flash
-
   enable :sessions
+  use Rack::MethodOverride
 
   helpers do
     def current_user
@@ -39,11 +39,12 @@ class Bnb < Sinatra::Base
   end
 
   get '/apartments' do
+    @listings = Listing.all
     erb :'apartments/index'
   end
 
   post '/apartments' do
-    @listing = Listing.new(name: params[:name],
+    @listing = Listing.new(name: params[:property_name],
                           description: params[:description],
                           price: params[:price],
                           user: current_user)
@@ -55,7 +56,12 @@ class Bnb < Sinatra::Base
 end
 
   get '/sessions/new' do
+    if current_user
+      flash.keep[:warning] = "You are already logged in"
+      redirect to '/apartments'
+    else
     erb :'sessions/log_in'
+    end
   end
 
   post '/sessions' do
@@ -68,6 +74,11 @@ end
       redirect '/sessions/new'
     end
   end
+
+  delete '/sessions' do
+    session[:user_id] = nil
+    flash.keep[:notice] = "Successfully logged out"
+    redirect to '/apartments'
 
   get '/booking/:name' do
     @apartment = Listing.first(name: params[:name])

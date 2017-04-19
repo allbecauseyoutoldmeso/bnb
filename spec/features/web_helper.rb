@@ -23,7 +23,7 @@ end
 def add_property(property_name: "Maker's",
                 description: "Fantastic new kitchen",
                 price: "200")
-    visit '/apartments'            
+    visit '/apartments'
     click_button 'Add a property'
     fill_in :property_name, with: property_name
     fill_in :description, with: description
