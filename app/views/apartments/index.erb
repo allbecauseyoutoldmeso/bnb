@@ -1,5 +1,11 @@
 <h1>Hello, <%=current_user.first_name%></h1>
 
+<% if flash[:listing_error] %>
+    <%= error %>
+  <% end %>
+<% end %>
+
+
 <form action="/apartments/new" >
   <input type="submit" value="Add a property">
 </form>

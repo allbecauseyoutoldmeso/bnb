@@ -34,13 +34,25 @@ class Bnb < Sinatra::Base
     end
   end
 
+  get '/apartments/new' do
+    erb :'apartments/new'
+  end
+
   get '/apartments' do
     erb :'apartments/index'
   end
 
-  get '/apartments/new' do
-    erb :'apartments/new'
-  end
+  post '/apartments' do
+    @listing = Listing.new(name: params[:name],
+                          description: params[:description],
+                          price: params[:price],
+                          user: current_user)
+    if @listing.save
+      redirect to '/apartments'
+    else
+      flash.now[:listing_error] = "You have already listed this property"
+    end
+end
 
   get '/sessions/new' do
     erb :'sessions/log_in'

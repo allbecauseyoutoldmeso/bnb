@@ -10,7 +10,7 @@ if ENV['RACK_ENV'] != 'production'
 end
 
 namespace :db do
- desc "Non destriuctive upgrade"
+ desc "Non destructive upgrade"
  task :auto_upgrade do
    DataMapper.auto_upgrade!
    puts 'Auto-upgrade complete (no data loss)'
