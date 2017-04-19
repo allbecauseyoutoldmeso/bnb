@@ -7,6 +7,7 @@ class Listing
   property :price,                Integer, :required => true
 
   belongs_to :user
+  has n, :bookings
 
 
 end
