@@ -7,6 +7,7 @@ require_relative 'datamapper_setup'
 class Bnb < Sinatra::Base
   register Sinatra::Flash
   enable :sessions
+  use Rack::MethodOverride
 
   helpers do
     def current_user
@@ -67,5 +68,11 @@ end
       flash.next[:error] = "Invalid username or password"
       redirect '/sessions/new'
     end
+  end
+
+  delete '/sessions' do
+    session[:user_id] = nil
+    flash.keep[:notice] = "Successfully logged out"
+    redirect to '/apartments'
   end
 end
