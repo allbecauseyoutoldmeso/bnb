@@ -43,7 +43,7 @@ class Bnb < Sinatra::Base
   end
 
   post '/apartments' do
-    @listing = Listing.new(name: params[:name],
+    @listing = Listing.new(name: params[:property_name],
                           description: params[:description],
                           price: params[:price],
                           user: current_user)
@@ -70,7 +70,7 @@ end
   end
 
   get '/booking/:name' do
-    @apartment = Listing.first(name: params[:name])
+    @listing = Listing.first(name: params[:name])
     erb :'booking/index'
   end
 
