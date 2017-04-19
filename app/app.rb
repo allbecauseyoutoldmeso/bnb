@@ -84,6 +84,6 @@ end
   end
 
   get '/profile' do
-    'Makers'
+    erb :'profile/index'
   end
 end

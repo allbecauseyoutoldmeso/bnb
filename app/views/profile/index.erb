@@ -1,0 +1,6 @@
+<%= current_user.first_name %>
+
+Requests I've made
+<% Booking.all.each do |booking| %>
+  <%= booking.listing.name if booking.user === current_user %>
+<% end %>
