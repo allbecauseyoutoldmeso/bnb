@@ -6,7 +6,6 @@ require_relative 'datamapper_setup'
 
 class Bnb < Sinatra::Base
   register Sinatra::Flash
-
   enable :sessions
 
   helpers do
