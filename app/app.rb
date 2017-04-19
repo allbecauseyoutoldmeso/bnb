@@ -56,7 +56,12 @@ class Bnb < Sinatra::Base
 end
 
   get '/sessions/new' do
+    if current_user 
+      flash.now[:warning] = "You are already logged in"
+      redirect to '/apartments'
+    else
     erb :'sessions/log_in'
+    end
   end
 
   post '/sessions' do
