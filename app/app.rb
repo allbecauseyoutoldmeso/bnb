@@ -79,6 +79,7 @@ end
     session[:user_id] = nil
     flash.keep[:notice] = "Successfully logged out"
     redirect to '/apartments'
+  end
 
   get '/booking/:name' do
     @listing = Listing.first(name: params[:name])
