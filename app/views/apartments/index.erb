@@ -1,7 +1,6 @@
 <h1>Hello, <%=current_user.first_name%></h1>
 
-<% if flash[:listing_error] && !flash[:listing_error].empty? %>
-  <% flash[:listing_error].each do |error| %>
+<% if flash[:listing_error] %>
     <%= error %>
   <% end %>
 <% end %>
