@@ -25,3 +25,4 @@ feature 'Lists a new apartment' do
     add_property
     expect(page).to have_content "Maker's"
 end
+end

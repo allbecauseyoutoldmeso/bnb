@@ -39,6 +39,7 @@ class Bnb < Sinatra::Base
   end
 
   get '/apartments' do
+    @listings = Listing.all
     erb :'apartments/index'
   end
 

@@ -4,6 +4,20 @@
     <%= error %>
   <% end %>
 
-<form action="/apartments/new" >
+<form action="/apartments/new">
   <input type="submit" value="Add a property">
 </form>
+
+<h1> Listings </h1>
+<% @listings.each do |list|%>
+  <p>
+  Name: <%= list.name %>
+  </p>
+  <p>
+  Description: <%= list.description%>
+  </p>
+  <p>
+  Price per night: <%= list.price%>
+  </p>
+<%end%>
+
