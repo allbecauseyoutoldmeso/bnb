@@ -43,7 +43,7 @@ class Bnb < Sinatra::Base
   end
 
   post '/apartments' do
-    @listing = Listing.new(name: params[:name],
+    @listing = Listing.new(name: params[:property_name],
                           description: params[:description],
                           price: params[:price],
                           user: current_user)
