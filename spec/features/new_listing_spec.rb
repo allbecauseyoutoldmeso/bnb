@@ -6,9 +6,14 @@ feature 'Lists a new apartment' do
   end
   scenario 'A user can add details about listing' do
     sign_up
-    click_button 'Add a property'
-    fill_in :property_name, with: 'Makers'
-    fill_in :description, with: 'No working toilets'
-    fill_in :price, with: '133'
+    add_property
+  end
+  scenario 'A user can add mutiple listings' do
+    sign_up
+    add_property
+    visit '/apartments'
+    add_property(property_name: "Mansion House",
+                    description: "In the heart of the countryside",
+                    price: "500")
   end
 end
