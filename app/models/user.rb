@@ -14,6 +14,7 @@ class User
   property :password_digest,   Text
 
   has n, :listings
+  has n, :bookings
 
   validates_confirmation_of :password
 
