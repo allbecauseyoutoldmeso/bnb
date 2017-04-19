@@ -80,10 +80,10 @@ end
                    to: params[:to],
                    listing: Listing.first(params[:listing_id]),
                    user: current_user)
-    redirect to '/requests'
+    redirect to '/profile'
   end
 
-  get '/requests' do
+  get '/profile' do
     'Makers'
   end
 end
