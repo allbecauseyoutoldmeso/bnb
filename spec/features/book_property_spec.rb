@@ -15,7 +15,7 @@ feature 'User books a property' do
     fill_in :from, with: '19/04/2017'
     fill_in :to, with: '22/04/2017'
     click_button 'Request booking'
-    expect(current_path).to eq '/profile'
+    expect(current_path).to eq '/profile/requests'
     expect(Booking.count).to eq(1)
     expect(page).to have_content "Makers"
   end
