@@ -56,4 +56,9 @@ class Bnb < Sinatra::Base
       redirect '/sessions/new'
     end
   end
+
+  get '/booking/:name' do
+    @apartment = Listing.first(name: params[:name])
+    erb :'booking/index'
+  end
 end

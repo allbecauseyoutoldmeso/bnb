@@ -9,8 +9,9 @@ feature 'User books a property' do
   end
 
   scenario 'request a property for certain dates' do
-    Listing.create(name: "Makers", description: "No toilets working", price: "133")
     sign_up
+    Listing.create(name: "Makers", description: "No toilets working", price: "133", user: User.first)
+    puts Listing.count
     visit('/booking/Makers')
     fill_in :from, with: '19/04/2017'
     fill_in :to, with: '22/04/2017'
