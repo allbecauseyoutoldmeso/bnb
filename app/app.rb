@@ -1,4 +1,4 @@
-ENV['RACK_ENV'] = 'development'
+ENV['RACK_ENV'] ||= 'development'
 
 require 'sinatra/base'
 require 'sinatra/flash'
@@ -81,7 +81,7 @@ end
     redirect to '/apartments'
 
   get '/booking/:name' do
-    @apartment = Listing.first(name: params[:name])
+    @listing = Listing.first(name: params[:name])
     erb :'booking/index'
   end
 
@@ -91,10 +91,18 @@ end
                    to: params[:to],
                    listing: Listing.first(params[:listing_id]),
                    user: current_user)
-    redirect to '/requests'
+    redirect to '/profile/requests'
   end
 
-  get '/requests' do
-    'Makers'
+  get '/profile/requests' do
+    erb :'profile/requests'
   end
+
+  post '/profile/requests/confirm' do
+    booking = Booking.first(params[:booking_id])
+    booking.confirmed = true
+    booking.save
+    redirect '/profile/requests'
+  end
+
 end
