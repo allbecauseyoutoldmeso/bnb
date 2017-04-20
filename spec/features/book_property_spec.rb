@@ -20,10 +20,19 @@ feature 'User books a property' do
     expect(page).to have_content "Makers"
   end
 
-  scenario 'unsuccessfully if already booked for the specified dates' do
+  scenario 'successfully if already booked property had not been confirmed for the specified dates' do
     sign_up
     add_property
     book_property
+    expect { book_property }.to change {Booking.count}
+    expect { book_property(from: "20/04/2017")}.to change {Booking.count}
+  end
+
+  scenario 'usuccessfully if already booked property had been confirmed for the specified dates' do
+    sign_up
+    add_property
+    book_property
+    Booking.first.update(:confirmed => true)
     expect { book_property }.not_to change {Booking.count}
     expect { book_property(from: "20/04/2017")}.not_to change {Booking.count}
   end

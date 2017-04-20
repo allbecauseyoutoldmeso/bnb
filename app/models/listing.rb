@@ -11,8 +11,8 @@ class Listing
 
   def unavailable_dates
     unavailable_dates = []
-    bookings.each do |booking|
-      (booking.from..booking.to).each { |date| unavailable_dates << date }
+    bookings.select { |booking| booking.confirmed == true }.each do |booking|
+        (booking.from..booking.to).each { |date| unavailable_dates << date }
     end
     unavailable_dates
   end
