@@ -2,7 +2,7 @@
 <html>
   <head>
     <link rel='stylesheet' type='text/css' href='/main.css'>
-    <link href="https://fonts.googleapis.com/css?family=Hind" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Nixie+One|Hind|Emblema+One" rel="stylesheet">
   </head>
 
 <div class='rowSec'>
@@ -23,7 +23,6 @@
     <input class='button' id='log_out' type="submit" value="Log out">
     </form>
   </div>
-</div>
   <%else%>
   <div class='col-12 flow_buttons'>
     <form action="/sessions/new">
@@ -34,11 +33,10 @@
     </form>
   </div>
 <% end %>
+</div>
 
-<div class='rowSec'>
-  <div class='col-12'>
+<div class='container'>
     <h1> Listings </h1>
-      <div>
         <% @listings.each do |list|%>
         <div class='listing_box'>
           <h2>
@@ -50,10 +48,8 @@
           <h4>
             Price per night: <%= list.price%>
           </h4>
-        </div>
-        <%end%>
       </div>
-    </div>
+        <%end%>
 </div>
 
 <div class='rowSec'>

@@ -54,16 +54,17 @@
 
 
 h1 {
-  font-family: 'Hind', sans-serif;
+  font-family: 'Emblema One', cursive;
   text-align: center;
-  font-size: 350%;
-  color: #67809f;
+  font-size: 400%;
+  color: #d24d57;
 }
 
 h2 {
   font-family: 'Hind', sans-serif;
   text-align: center;
   font-size: 200%;
+  color: #515151;
 }
 
 h3 {
@@ -151,9 +152,21 @@ input:focus, input:hover{
 }
 
 .listing_box {
-  background-color: #f4f8fc;
+  background-color: #fcedea;
   border: 10px solid white;
   border-radius: 50px;
   color: #34495e;
-  padding: 5px 20px 5px 20px solid white;
+}
+
+.sign_up_box {
+  background-color: #c8f7c5;
+  border: 10px solid white;
+  border-radius: 50px;
+  color: #34495e;
+}
+
+.container {
+  width: 50%;
+  margin: 0 auto;
+  min-width: 200px;
 }

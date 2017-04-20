@@ -2,9 +2,9 @@
 <html>
   <head>
     <link rel='stylesheet' type='text/css' href='/main.css'>
-    <link href="https://fonts.googleapis.com/css?family=Hind" rel="stylesheet">
-  </head>
-  <h1> Welcome to EEEK BnB </h1>
+    <link href="https://fonts.googleapis.com/css?family=Nixie+One|Hind|Emblema+One" rel="stylesheet">
+</head>
+  <h1>EEEK B&B </h1>
   <h2> Please sign up below </h2>
 
 <% if flash[:errors] && !flash[:errors].empty? %>
@@ -12,6 +12,7 @@
     <%= error %>
   <% end %>
 <% end %>
+<div class='sign_up_box'>
 <h4>
 <div class='input' align="center">
  <form action='/users' method='post'>
@@ -34,5 +35,6 @@
  </div>
  </form>
  </h4>
+ </div>
 
 </html>
