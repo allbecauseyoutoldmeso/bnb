@@ -89,14 +89,13 @@ p {
 
 .button {
     font-family: 'Hind', sans-serif;
-    background-color: #ecf0f1; /* Porcelain*/
     border: none;
-    color: black;
-    padding: 16px 32px;
+    color: #6C7A89;
+    padding: 12px 26px;
     text-align: center;
     text-decoration: none;
     display: inline-block;
-    font-size: 16px;
+    font-size: 12px;
     margin: 4px 2px;
     -webkit-transition-duration: 0.4s; /* Safari */
     transition-duration: 0.4s;
@@ -159,7 +158,10 @@ input:focus, input:hover{
 }
 
 .sign_up_box {
-  background-color: #c8f7c5;
+  width: 50%;
+  margin: 0 auto;
+  min-width: 200px;
+  background-color: #fcedea;
   border: 10px solid white;
   border-radius: 50px;
   color: #34495e;
