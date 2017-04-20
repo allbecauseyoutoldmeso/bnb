@@ -1,0 +1,174 @@
+
+.rowSec {
+  width: 100%;
+  height: 100%;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.col-1 {
+  width: 8.33%;
+}
+.col-2 {
+  width: 16.66%;
+}
+.col-3 {
+  width: 25%;
+}
+.col-4 {
+  width: 33.33%;
+}
+.col-5 {
+  width: 41.66%;
+}
+.col-6 {
+  width: 50%;
+}
+.col-7 {
+  width: 58.33%;
+}
+.col-8 {
+  width: 66.66%;
+}
+.col-9 {
+  width: 75%;
+}
+.col-10 {
+  width: 83.33%;
+}
+.col-11 {
+  width: 91.66%;
+}
+.col-12 {
+  width: 100%;
+}
+
+.head-links {
+  {background-color: #e7e7e7; color: black;} /* Gray */
+}
+
+
+h1 {
+  font-family: 'Emblema One', cursive;
+  text-align: center;
+  font-size: 400%;
+  color: #d24d57;
+}
+
+h2 {
+  font-family: 'Hind', sans-serif;
+  text-align: center;
+  font-size: 200%;
+  color: #515151;
+}
+
+h3 {
+  font-family: 'Hind', sans-serif;
+  text-align: left;
+  font-size: 150%;
+}
+
+h4 {
+  font-family: 'Hind', sans-serif;
+  text-align: center;
+  font-size: 100%;
+}
+
+p {
+  font-family: 'Hind', sans-serif;
+  text-align: center;
+  font-size: 80%;
+  border:
+}
+
+
+.button {
+    font-family: 'Hind', sans-serif;
+    border: none;
+    color: #6C7A89;
+    padding: 12px 26px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 12px;
+    margin: 4px 2px;
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+    cursor: pointer;
+}
+
+.button:hover {
+  background-color: #e7e7e7;
+}
+
+input {
+  font-family: 'Hind', sans-serif;
+  font-size: 120%;
+  border: 1px solid;
+  border-radius: 5px;
+  padding: 5px 5px 5px 30px;
+  display: block;
+  margin-bottom: 10px;
+}
+input:focus, input:hover{
+  border: 1px solid;
+}
+
+#name {
+  align-self: flex-start;
+}
+
+.flow_buttons {
+  align-self: flex-end;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.log_out_notice {
+  font-family: 'Hind', sans-serif;
+  align-self: flex-end;
+  display: flex;
+  justify-content: center;
+  }
+
+.logged_in_warning {
+  font-family: 'Hind', sans-serif;
+  align-self: flex-end;
+  display: flex;
+  justify-content: center;
+}
+
+.listing_error {
+  font-family: 'Hind', sans-serif;
+  align-self: flex-end;
+  display: flex;
+  justify-content: center;
+}
+
+.listing_box {
+  background-color: #fcedea;
+  border: 10px solid white;
+  border-radius: 50px;
+  color: #34495e;
+}
+
+.sign_up_box {
+  width: 50%;
+  margin: 0 auto;
+  min-width: 200px;
+  background-color: #fcedea;
+  border: 10px solid white;
+  border-radius: 50px;
+  color: #34495e;
+}
+
+.container {
+  width: 50%;
+  margin: 0 auto;
+  min-width: 200px;
+}

@@ -1,13 +1,33 @@
-<h1 id='login_title'> Welcome to EEEK BnB. Please sign up below. </h1>
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel='stylesheet' type='text/css' href='/main.css'>
+    <link href="https://fonts.googleapis.com/css?family=Nixie+One|Hind|Emblema+One" rel="stylesheet">
+</head>
+  <div class='col-12 flow_buttons'>
+    <form action="/apartments">
+      <input class='button' id='view apartments' type="submit" value="View listings">
+    </form>
+    <form action="/sessions/new">
+      <input class='button' id='log in' type="submit" value="Login">
+    </form>
+  </div>
 
+
+
+</div>
+  <h1>EEEK. B&B </h1>
+  <h2> Please sign up below </h2>
+</div>
 <% if flash[:errors] && !flash[:errors].empty? %>
   <% flash[:errors].each do |error| %>
     <%= error %>
   <% end %>
 <% end %>
 
-<div class='rowSec'>
- <section id='signup'>
+<div class='sign_up_box'>
+<h4>
+<div class='input' align="center">
  <form action='/users' method='post'>
    <label for='first_name'>First Name
      <input type='text' name='first_name' required />
@@ -24,7 +44,10 @@
    <label for='password_confirmation'>Password Confirmation
      <input type='password' name='password_confirmation' required  />
    </label>
-   <input type='submit' value='Sign up'  />
+   <button class ='button' align='center'>Sign up</button>
+ </div>
  </form>
-</section>
-</div>
+ </h4>
+ </div>
+
+</html>

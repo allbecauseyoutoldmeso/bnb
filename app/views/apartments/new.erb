@@ -1,15 +1,37 @@
-<form action="/apartments" method="post">
-    <label for='property_name'>Property name:
-      <input type='text' name='property_name' required  />
-    </label>
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel='stylesheet' type='text/css' href='/main.css'>
+    <link href="https://fonts.googleapis.com/css?family=Nixie+One|Hind|Emblema+One" rel="stylesheet">
+  </head>
 
-    <label for='description'>Description:
-      <input type='text' name='description' required  />
-    </label>
+  <div class='rowSec'>
+    <div class='col-12 flow_buttons'>
+        <form action="/apartments">
+          <input class='button' type="submit" value="Back to listings">
+        </form>
+        <form action="/requests">
+          <input class='button' type='submit' value='Requests'>
+        </form>
+    </div>
+  </div>
 
-    <label for='price'>Price per night:
-      <input type='text' name='price' required  />
-    </label>
+  <h1> New listing <h1>
+<h4>
+  <div class='input' align="center">
+    <form action="/apartments" method="post">
+        <label for='property_name'>Property name:
+          <input type='text' name='property_name' required  />
+        </label>
 
-      <input type='submit' value='Submit' required  />
-</form>
+        <label for='description'>Description:
+          <input type='text' name='description' required  />
+        </label>
+
+        <label for='price'>Price per night:
+          <input type='text' name='price' required  />
+        </label>
+      <button class ='button' align='center'>Submit</button>
+    </form>
+  </div>
+</h4>
