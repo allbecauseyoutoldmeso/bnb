@@ -1,0 +1,8 @@
+<%= @listing.name %>
+
+<form action='/booking' method='post'>
+  <input type='date' name = 'from' />
+  <input type='date' name = 'to' />
+  <input type='hidden' name='listing_id' value='<%= @listing.id %>' />
+  <input type='submit' value='Request booking' />
+</form>
