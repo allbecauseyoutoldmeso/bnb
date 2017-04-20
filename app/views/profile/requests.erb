@@ -3,6 +3,8 @@
 Requests I've made
 <% current_user.bookings.each do |booking| %>
   <%= booking.listing.name %>
+  <%='Booking confirmed' if booking.confirmed %>
+
 <% end %>
 
 Requests I've received
