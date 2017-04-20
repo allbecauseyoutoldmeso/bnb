@@ -2,9 +2,11 @@ ENV['RACK_ENV'] = 'test'
 
 require 'capybara/rspec'
 require 'database_cleaner'
+require 'date'
 
 require_relative '../app/app.rb'
 require_relative './features/web_helper'
+require_relative 'helpers'
 
 
 Capybara.app = Bnb
@@ -30,6 +32,8 @@ Capybara.app = Bnb
 #
 # See http://rubydoc.info/gems/rspec-core/RSpec/Core/Configuration
 RSpec.configure do |config|
+
+  config.include Helpers
 
   config.before(:suite) do
     DatabaseCleaner.strategy = :transaction
