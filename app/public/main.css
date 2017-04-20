@@ -57,6 +57,7 @@ h1 {
   font-family: 'Hind', sans-serif;
   text-align: center;
   font-size: 350%;
+  color: #67809f;
 }
 
 h2 {
@@ -87,7 +88,7 @@ p {
 
 .button {
     font-family: 'Hind', sans-serif;
-    background-color: #c6c9ce; /* Grey*/
+    background-color: #ecf0f1; /* Porcelain*/
     border: none;
     color: black;
     padding: 16px 32px;
@@ -125,7 +126,7 @@ input:focus, input:hover{
 .flow_buttons {
   align-self: flex-end;
   display: flex;
-  justify-content: center;
+  justify-content: flex-end;
 }
 
 .log_out_notice {
@@ -147,4 +148,12 @@ input:focus, input:hover{
   align-self: flex-end;
   display: flex;
   justify-content: center;
+}
+
+.listing_box {
+  background-color: #f4f8fc;
+  border: 10px solid white;
+  border-radius: 50px;
+  color: #34495e;
+  padding: 5px 20px 5px 20px solid white;
 }

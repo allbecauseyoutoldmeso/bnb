@@ -3,31 +3,44 @@
   <head>
     <link rel='stylesheet' type='text/css' href='/main.css'>
     <link href="https://fonts.googleapis.com/css?family=Hind" rel="stylesheet">
-
   </head>
-<div class='rowSec'>
-  <div class='col-5' id='name'>
-<%if current_user %>
-<h3>Hello, <%=current_user.first_name%></h3>
-  </div>
-  <div class='col-7 flow_buttons' align='right'>
 
+<div class='rowSec'>
+    <%if current_user %>
+    <div class='col-5' id='name'>
+      <h3>Hello, <%=current_user.first_name%></h3>
+    </div>
+
+  <div class='col-7 flow_buttons'>
     <form action="/apartments/new">
       <input class='button' id='add_property' type="submit" value="Add a property">
-      </form>
-      <form action="/sessions" method="post">
-        <input type="hidden" name="_method" value="delete">
-        <input class='button' id='log_out' type="submit" value="Log out">
-      </form>
+    </form>
+    <form action="/requests">
+      <input class='button' type='submit' value='Requests'>
+    </form>
+    <form action="/sessions" method="post">
+      <input type="hidden" name="_method" value="delete">
+    <input class='button' id='log_out' type="submit" value="Log out">
+    </form>
+  </div>
+</div>
+  <%else%>
+  <div class='col-12 flow_buttons'>
+    <form action="/sessions/new">
+      <input class='button' type="submit" value="Sign in">
+    </form>
+    <form action="/users/new">
+      <input class='button' type="submit" value="Sign up">
+    </form>
   </div>
 <% end %>
-</div>
 
 <div class='rowSec'>
   <div class='col-12'>
     <h1> Listings </h1>
       <div>
         <% @listings.each do |list|%>
+        <div class='listing_box'>
           <h2>
             <%= list.name %>
           </h2>
@@ -37,6 +50,7 @@
           <h4>
             Price per night: <%= list.price%>
           </h4>
+        </div>
         <%end%>
       </div>
     </div>
@@ -61,7 +75,7 @@
         <div class='listing_error' id="listing_error">
           <%= error %>
         </div>
-        <% end %>
+      <% end %>
     </h3>
   </div>
 </div>
