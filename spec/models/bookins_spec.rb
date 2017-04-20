@@ -1,4 +1,6 @@
 describe Booking do
+
+
   describe '.unavailable_dates' do
     it('lists unavalable dates for a particular listing') do
       create_user

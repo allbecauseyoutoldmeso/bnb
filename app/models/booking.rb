@@ -19,4 +19,11 @@ def self.unavailable_dates(listing)
   unavailable_dates
 end
 
+
+# def self.make(confirmed, from, to, listing, user)
+#   unless self.unavailable_dates(listing).include?(to || from)
+#     Booking.create(confirmed, from, to, listing, user)
+#   end
+# end
+
 end

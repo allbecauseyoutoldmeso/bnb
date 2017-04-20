@@ -6,11 +6,13 @@ class Bnb < Sinatra::Base
   end
 
   post '/booking' do
-    Booking.create(confirmed: false,
-                   from: params[:from],
-                   to: params[:to],
-                   listing: Listing.first(params[:listing_id]),
-                   user: current_user)
-    redirect to '/profile/requests'
+    unless Listing.first(params[:listing_id]).unavailable_dates.include?(Date.parse(params[:from]) || Date.parse(params[:to]) )
+      Booking.create(confirmed: false,
+                     from: params[:from],
+                     to: params[:to],
+                     listing: Listing.first(params[:listing_id]),
+                     user: current_user)
+      redirect to '/profile/requests'
+    end
   end
 end
