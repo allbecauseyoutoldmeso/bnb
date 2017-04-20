@@ -1,8 +1,24 @@
 <%= @listing.name %>
 
 <form action='/booking' method='post'>
-  <input type='date' name = 'from' />
-  <input type='date' name = 'to' />
+  <input type='text' name = 'from' id='datepicker_from' />
+  <input type='text' name = 'to' id='datepicker_to'/>
   <input type='hidden' name='listing_id' value='<%= @listing.id %>' />
   <input type='submit' value='Request booking' />
 </form>
+
+<script>
+$( document ).ready(function() {
+
+  $( function() {
+    $( "#datepicker_from" ).datepicker({
+      beforeShowDay: function(date) {
+        var disableddates = <%= @listing.unavailable_dates.map {|date| date.strftime("%Y-%m-%d")} %>;
+        var string = jQuery.datepicker.formatDate('yy-mm-dd', date);
+        return [ disableddates.indexOf(string) == -1 ]
+      }
+    });
+    $( "#datepicker_to" ).datepicker();
+  });
+});
+</script>
