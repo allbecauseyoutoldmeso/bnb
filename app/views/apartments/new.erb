@@ -1,15 +1,25 @@
-<form action="/apartments" method="post">
-    <label for='property_name'>Property name:
-      <input type='text' name='property_name' required  />
-    </label>
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel='stylesheet' type='text/css' href='/main.css'>
+    <link href="https://fonts.googleapis.com/css?family=Hind" rel="stylesheet">
+  </head>
+  <h1> New listing <h1>
+<h3>
+  <div class='input' align="center">
+    <form action="/apartments" method="post">
+        <label for='property_name'>Property name:
+          <input type='text' name='property_name' required  />
+        </label>
 
-    <label for='description'>Description:
-      <input type='text' name='description' required  />
-    </label>
+        <label for='description'>Description:
+          <input type='text' name='description' required  />
+        </label>
 
-    <label for='price'>Price per night:
-      <input type='text' name='price' required  />
-    </label>
-
-      <input type='submit' value='Submit' required  />
-</form>
+        <label for='price'>Price per night:
+          <input type='text' name='price' required  />
+        </label>
+      <button class ='button' align='center'>Submit</button>
+    </form>
+  </div>
+</h3>

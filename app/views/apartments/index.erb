@@ -1,42 +1,68 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel='stylesheet' type='text/css' href='/main.css'>
+    <link href="https://fonts.googleapis.com/css?family=Hind" rel="stylesheet">
+
+  </head>
+<div class='rowSec'>
+  <div class='col-5' id='name'>
 <%if current_user %>
-<h1>Hello, <%=current_user.first_name%></h1>
+<h3>Hello, <%=current_user.first_name%></h3>
+  </div>
+  <div class='col-7 flow_buttons' align='right'>
 
-<form action="/sessions" method="post">
-  <input type="hidden" name="_method" value="delete">
-  <input type="submit" value="Log out">
-</form>
-
-<form action="/apartments/new">
-  <input type="submit" value="Add a property">
-</form>
-<% end %>
-
-<% if flash[:warning]%>
-  <div id="warning">
-    <%= flash[:warning]%>
+    <form action="/apartments/new">
+      <input class='button' id='add_property' type="submit" value="Add a property">
+      </form>
+      <form action="/sessions" method="post">
+        <input type="hidden" name="_method" value="delete">
+        <input class='button' id='log_out' type="submit" value="Log out">
+      </form>
   </div>
 <% end %>
+</div>
 
-<% if flash[:notice]%>
-  <div id="notice">
-    <%= flash[:notice]%>
+<div class='rowSec'>
+  <div class='col-12'>
+    <h1> Listings </h1>
+      <div>
+        <% @listings.each do |list|%>
+          <h2>
+            <%= list.name %>
+          </h2>
+          <h4>
+            Description: <%= list.description%>
+          </h4>
+          <h4>
+            Price per night: <%= list.price%>
+          </h4>
+        <%end%>
+      </div>
+    </div>
+</div>
+
+<div class='rowSec'>
+  <div class='col-12'>
+    <h3>
+      <% if flash[:logged_in_warning]%>
+        <div class='logged_in_warning' id="logged_in_warning">
+          <%= flash[:logged_in_warning]%>
+        </div>
+      <% end %>
+
+      <% if flash[:log_out_notice]%>
+        <div class='log_out_notice' id="log_out_notice">
+          <%= flash[:log_out_notice]%>
+        </div>
+      <% end %>
+
+      <% if flash[:listing_error] %>
+        <div class='listing_error' id="listing_error">
+          <%= error %>
+        </div>
+        <% end %>
+    </h3>
   </div>
-<% end %>
-
-<% if flash[:listing_error] %>
-    <%= error %>
-<% end %>
-
-
-<h1> Listings </h1>
-<% @listings.each do |list|%>
-  <p>
-  Name: <%= list.name %>
-  </p>
-  <p>
-  Description: <%= list.description%>
-  </p>
-  <p>
-  Price per night: <%= list.price%>
-  </p>
-<%end%>
+</div>
+</html>

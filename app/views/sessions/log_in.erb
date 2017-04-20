@@ -1,19 +1,28 @@
+<html>
+  <head>
+    <link rel='stylesheet' type='text/css' href='/main.css'>
+    <link href="https://fonts.googleapis.com/css?family=Hind" rel="stylesheet">
+  </head>
+
 <h1 id='login_title'> Please log in below </h1>
-
-<div class='rowSec'>
- <section id='log in'>
- <form action='/sessions' method='post'>
-   <label for='email'>Email
-     <input type='email' name='email' required  />
+<h4>
+  <div class='input' align='center'>
+  <section id='log in'>
+    <form action='/sessions' method='post'>
+    <label for='email'>Email
+    <input type='email' name='email' required  />
+    </label>
+    <label for='password'>Password
+    <input type='password' name='password' required  />
    </label>
-   <label for='password'>Password
-     <input type='password' name='password' required  />
-   </label>
-   <input type='submit' value='Log in'  />
- </form>
-</section>
+   <button class='button' type='submit' value='Log in'>Log in</button>
+  </form>
+  </section>
 </div>
-
+</div>
+</h4>
 <p>
   <font color="yellow" face="courier new"><%=flash[:error]%></font>
 </p>
+
+</html>
