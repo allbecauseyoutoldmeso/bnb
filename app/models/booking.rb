@@ -4,7 +4,7 @@ include DataMapper::Resource
 
 property :id, Serial
 property :confirmed, Boolean
-property :rejected, Boolean
+property :rejected, Boolean, :default => false
 property :from, Date
 property :to, Date
 

@@ -8,7 +8,7 @@ Requests I've made
 <% end %>
 
 Requests I've received
-<% current_user.listings.bookings.each do |booking| %>
+<% current_user.listings.bookings.select { |booking| booking.rejected == false }.each do |booking| %>
   <%= booking.listing.name %>
   <% if booking.confirmed == false %>
        <form method ='post'>
