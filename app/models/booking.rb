@@ -4,6 +4,7 @@ include DataMapper::Resource
 
 property :id, Serial
 property :confirmed, Boolean
+property :rejected, Boolean
 property :from, Date
 property :to, Date
 
@@ -18,12 +19,5 @@ def self.unavailable_dates(listing)
   end
   unavailable_dates
 end
-
-
-# def self.make(confirmed, from, to, listing, user)
-#   unless self.unavailable_dates(listing).include?(to || from)
-#     Booking.create(confirmed, from, to, listing, user)
-#   end
-# end
 
 end

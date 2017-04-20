@@ -23,4 +23,17 @@ feature 'Confirm bookings' do
     expect(page).to have_content 'Booking confirmed'
   end
 
+  scenario 'user can confirm booking' do
+    click_button('Reject booking')
+    expect(page).to have_content('Booking rejected')
+  end
+
+  scenario 'user can see is their booking request was confirmed' do
+    click_button('Reject booking')
+    log_out
+    log_in(email: "sam@makers.com")
+    visit('profile/requests')
+    expect(page).not_to have_content 'Makers'
+  end
+
 end
