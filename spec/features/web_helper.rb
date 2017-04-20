@@ -37,3 +37,18 @@ def book_property(from: '19/04/2017', to: '22/04/2017')
   fill_in :to, with: to
   click_button 'Request booking'
 end
+
+def log_out
+  visit('/apartments')
+  click_button 'Log out'
+end
+
+def full_cycle
+  sign_up
+  add_property
+  log_out
+  sign_up(first_name: "Sam",
+          email: "sam@makers.com")
+  book_property
+  log_out
+end
