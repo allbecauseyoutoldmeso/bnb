@@ -3,15 +3,17 @@
 Requests I've made
 <% current_user.bookings.each do |booking| %>
   <%= booking.listing.name %>
+  <%='Booking confirmed' if booking.confirmed %>
+  <%='Booking rejected' if booking.rejected %>
 <% end %>
 
 Requests I've received
-<% current_user.listings.bookings.each do |booking| %>
+<% current_user.listings.bookings.select { |booking| booking.rejected == false }.each do |booking| %>
   <%= booking.listing.name %>
   <% if booking.confirmed == false %>
-       <form action = '/profile/requests/confirm' method ='post'>
-         <input type='submit' name='confirm' value='Confirm booking'/>
-         <!-- <input type='submit' name='refuse' value='Reject booking'/> -->
+       <form method ='post'>
+         <button formaction = '/profile/requests/confirm' value='Confirm booking'>Confirm booking</button>
+         <button formaction = '/profile/requests/reject' value='Reject booking'>Reject booking</button>
          <input type='hidden' name='booking_id' value='<%=booking.id%>'/>
        </form>
   <% elsif booking.confirmed == true %>

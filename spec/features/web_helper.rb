@@ -20,7 +20,7 @@ def log_in(email: "roi@makers.com",
   click_button("Log in")
 end
 
-def add_property(property_name: "Maker's",
+def add_property(property_name: "Makers",
                 description: "Fantastic new kitchen",
                 price: "200")
     visit '/apartments'
@@ -29,4 +29,26 @@ def add_property(property_name: "Maker's",
     fill_in :description, with: description
     fill_in :price, with: price
     click_button 'Submit'
+end
+
+def book_property(from: '19/04/2017', to: '22/04/2017')
+  visit('/booking/Makers')
+  fill_in :from, with: from
+  fill_in :to, with: to
+  click_button 'Request booking'
+end
+
+def log_out
+  visit('/apartments')
+  click_button 'Log out'
+end
+
+def full_cycle
+  sign_up
+  add_property
+  log_out
+  sign_up(first_name: "Sam",
+          email: "sam@makers.com")
+  book_property
+  log_out
 end

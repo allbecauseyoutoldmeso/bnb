@@ -44,6 +44,6 @@ feature 'Lists a new apartment' do
   scenario 'A user is able to view all listings' do
     sign_up
     add_property
-    expect(page).to have_content "Maker's"
+    expect(page).to have_content "Makers"
 end
 end
