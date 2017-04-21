@@ -91,12 +91,12 @@ p {
     font-family: 'Hind', sans-serif;
     border: none;
     color: #6C7A89;
-    padding: 12px 26px;
+    padding: 9px 26px;
     text-align: center;
     text-decoration: none;
     display: inline-block;
     font-size: 12px;
-    margin: 4px 2px;
+    margin: 0;
     -webkit-transition-duration: 0.4s; /* Safari */
     transition-duration: 0.4s;
     cursor: pointer;
@@ -194,4 +194,17 @@ input:focus, input:hover{
 
 .closebtn:hover{
   color: #e7e7e7
+}
+
+.calendars  {
+  /*align-self: flex-end;*/
+  display: flex;
+  justify-content: center;
+
+}
+#datepicker_from, #datepicker_to {
+  width: 200px;
+  margin-right: 20px;
+  margin-bottom: 20px;
+  float: left;
 }

@@ -1,9 +1,3 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <link rel='stylesheet' type='text/css' href='/main.css'>
-    <link href="https://fonts.googleapis.com/css?family=Nixie+One|Hind|Emblema+One|Dosis" rel="stylesheet">
-  </head>
 
 Requests I've made
 <% current_user.bookings.each do |booking| %>
@@ -19,4 +13,3 @@ Requests I've received
   </a>
     <%= 'Booking confirmed' if booking.confirmed == true %>
 <% end %>
-

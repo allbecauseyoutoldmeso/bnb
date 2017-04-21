@@ -1,10 +1,13 @@
-<%= @listing.name %>
-<form action='/booking' method='post'>
-  <input type='text' name = 'from' id='datepicker_from' />
-  <input type='text' name = 'to' id='datepicker_to'/>
-  <input type='hidden' name='listing_id' value=<%= @listing.id %> />
-  <input type='submit' value='Request booking' />
-</form>
+<div class='container'>
+  <h2> <%= @listing.name %> </h2>
+    <form action='/booking' method='post'>
+      <input type='text' name = 'from' id='datepicker_from' />
+      <input type='text' name = 'to' id='datepicker_to'/>
+      <input type='hidden' name='listing_id' value=<%= @listing.id %> />
+      <input class='button' type='submit' value='Request booking' />
+    </form>
+</div>
+
 
 <script>
 $( document ).ready(function() {
