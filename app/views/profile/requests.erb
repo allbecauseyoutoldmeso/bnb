@@ -1,23 +1,59 @@
-<%= current_user.first_name %>
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel='stylesheet' type='text/css' href='/main.css'>
+    <link href="https://fonts.googleapis.com/css?family=Nixie+One|Hind|Emblema+One|Dosis" rel="stylesheet">
+  </head>
 
-Requests I've made
-<% current_user.bookings.each do |booking| %>
-  <%= booking.listing.name %>
-  <%='Booking confirmed' if booking.confirmed %>
-  <%='Booking rejected' if booking.rejected %>
-<% end %>
+<div class='rowSec'>
+  <div class='col-5' id='name'>
+    <h3> <%= current_user.first_name %> </h3>
+  </div>
+</div>
 
-Requests I've received
-<% current_user.listings.bookings.select { |booking| booking.rejected == false }.each do |booking| %>
-  <%= booking.listing.name %>
-  <% if booking.confirmed == false %>
-       <form method ='post'>
-         <button formaction = '/profile/requests/confirm' value='Confirm booking'>Confirm booking</button>
-         <button formaction = '/profile/requests/reject' value='Reject booking'>Reject booking</button>
-         <input type='hidden' name='booking_id' value='<%=booking.id%>'/>
-       </form>
-  <% elsif booking.confirmed == true %>
+<div class='rowSec'>
+  <div class='col-10' id='name'>
+    <h1> Requests </h1>
+  </div>
+</div>
 
-    Booking confirmed.
-  <% end %>
-<% end %>
+<div class='rowSec'>
+  <div class='col-5' id='name'>
+    <h2> Requests I've made </h2>
+      <% current_user.bookings.each do |booking| %>
+      <div class='listing_box'>
+        <h2> <%= booking.listing.name %> </h2>
+        <h4>
+          <%='Booking confirmed' if booking.confirmed %>
+        </h4>
+        <h4>
+          <%='Booking rejected' if booking.rejected %>
+        </h4>
+      </div>
+      <% end %>
+  </div>
+
+  <div class='col-5' id='name'>
+  <h2> Requests I've received </h2>
+    <div class='listing_box'>
+      <% current_user.listings.bookings.select { |booking| booking.rejected == false }.each do |booking| %>
+        <h2>
+          <%= booking.listing.name %>
+        </h2>
+          <% if booking.confirmed == false %>
+            <div class='col-9 flow_buttons'>
+              <form method ='post'>
+                <button class='button' formaction = '/profile/requests/confirm' value='Confirm booking'>Confirm booking</button>
+                <button class='button' formaction = '/profile/requests/reject' value='Reject booking'>Reject booking</button>
+                <input type='hidden' name='booking_id' value='<%=booking.id%>'/>
+             </form>
+            </div>
+          <% elsif booking.confirmed == true %>
+            <h4>
+              Booking confirmed
+            </h4>
+          <% end %>
+         </div>
+        <% end %>
+  </div>
+</div>
