@@ -108,7 +108,7 @@ p {
 
 input {
   font-family: 'Hind', sans-serif;
-  font-size: 120%;
+  font-size: 100%;
   border: 1px solid;
   border-radius: 5px;
   padding: 5px 5px 5px 30px;
@@ -127,27 +127,6 @@ input:focus, input:hover{
   align-self: flex-end;
   display: flex;
   justify-content: flex-end;
-}
-
-.log_out_notice {
-  font-family: 'Hind', sans-serif;
-  align-self: flex-end;
-  display: flex;
-  justify-content: center;
-  }
-
-.logged_in_warning {
-  font-family: 'Hind', sans-serif;
-  align-self: flex-end;
-  display: flex;
-  justify-content: center;
-}
-
-.listing_error {
-  font-family: 'Hind', sans-serif;
-  align-self: flex-end;
-  display: flex;
-  justify-content: center;
 }
 
 .listing_box {
@@ -171,4 +150,42 @@ input:focus, input:hover{
   width: 50%;
   margin: 0 auto;
   min-width: 200px;
+}
+
+.alert {
+  font-family: 'Hind', sans-serif;
+  padding: 5px 20px 5px 20px;
+  background-color: #e7e7e7;
+  color: #d24d57;
+  border-radius: 50px;
+  opacity: 1;
+  transition: opacity 0.6s;
+  align-self: flex-end;
+  display: flex;
+  justify-content: center;
+}
+
+.alert.logged_in_warning {background-color: #e7e7e7}
+.alert.log_out_notice {background-color: #e7e7e7}
+.alert.listing_error {background-color: #e7e7e7}
+.alert.name {
+            background-color: #fcedea;
+            color: #34495e;
+            width: 100px;
+          }
+
+.closebtn {
+  font-family: 'Hind', sans-serif;
+  margin-left: 15px;
+  color: #34495e;
+  font-weight: bold;
+  float: right;
+  font-size: 20px;
+  line-height: 28px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.closebtn:hover{
+  color: #e7e7e7
 }
