@@ -16,4 +16,14 @@ class Bnb < Sinatra::Base
     redirect '/profile/requests'
   end
 
+  get '/profile/requests/made/:id' do
+    @booking = Booking.first(params[:id])
+    erb :'profile/booking_made'
+  end
+
+  get '/profile/requests/received/:id' do
+    @booking = Booking.first(params[:id])
+    erb :'profile/booking_received'
+  end
+
 end
