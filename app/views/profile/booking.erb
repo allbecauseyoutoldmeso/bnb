@@ -1,0 +1,7 @@
+<%=@booking.listing.name%>
+<%=@booking.listing.description%>
+from <%=@booking.from%> to <%=@booking.to%>
+
+<form action='/profile/requests/message' method=post>
+  <input id='message_button' type='submit' value='Message owner'/>
+</form>

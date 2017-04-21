@@ -2,7 +2,7 @@
 
 Requests I've made
 <% current_user.bookings.each do |booking| %>
-  <%= booking.listing.name %>
+  <a href='/profile/requests/<%= booking.id %>'><%= booking.listing.name%></a>
   <%='Booking confirmed' if booking.confirmed %>
   <%='Booking rejected' if booking.rejected %>
 <% end %>
