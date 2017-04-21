@@ -17,7 +17,8 @@ class Bnb < Sinatra::Base
     if @listing.save
       redirect to '/apartments'
     else
-      flash.now[:errors] = ["You have already listed this property"]
+      flash.next[:errors] = ["You have already listed this property"]
+      redirect to '/apartments'
     end
   end
 end
