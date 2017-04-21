@@ -32,10 +32,31 @@
           <form action="/users/new">
             <input class='button' type="submit" value="Sign up">
           </form>
+          <form action="/apartments">
+            <input class='button' id='view apartments' type="submit" value="View listings">
+          </form>
+          <form action="/sessions/new">
+            <input class='button' id='log in' type="submit" value="Login">
+          </form>
         </div>
       <% end %>
     </div>
 
+
+
+
+    <div class='rowSec'>
+      <div class='col-12'>
+        <% if flash[:errors] && !flash[:errors].empty? %>
+          <div class='alert log_out_notice' id="log_out_notice">
+            <span class="closebtn">&times;</span>
+              <% flash[:errors].each do |error| %>
+                <%= error %>
+              <% end %>
+          </div>
+        <% end %>
+      </div>
+    </div>
 
 
 

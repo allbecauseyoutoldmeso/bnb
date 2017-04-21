@@ -1,24 +1,9 @@
 
-  <div class='col-12 flow_buttons'>
-    <form action="/apartments">
-      <input class='button' id='view apartments' type="submit" value="View listings">
-    </form>
-    <form action="/sessions/new">
-      <input class='button' id='log in' type="submit" value="Login">
-    </form>
-  </div>
-
-
-
 </div>
   <h1>EEEK. B&B </h1>
   <h2> Please sign up below </h2>
 </div>
-<% if flash[:errors] && !flash[:errors].empty? %>
-  <% flash[:errors].each do |error| %>
-    <%= error %>
-  <% end %>
-<% end %>
+
 
 <div class='sign_up_box'>
 <h4>

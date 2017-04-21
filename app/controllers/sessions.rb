@@ -2,10 +2,9 @@ class Bnb < Sinatra::Base
 
   get '/sessions/new' do
     if current_user
-      flash.now[:logged_in_warning] = "You are already logged in"
       redirect to '/apartments'
     else
-    erb :'sessions/log_in'
+      erb :'sessions/log_in'
     end
   end
 
@@ -21,7 +20,7 @@ class Bnb < Sinatra::Base
 
   delete '/sessions' do
     session[:user_id] = nil
-    flash.keep[:log_out_notice] = "Successfully logged out"
+    flash.keep[:errors] = ["Successfully logged out"]
     redirect to '/apartments'
   end
 end

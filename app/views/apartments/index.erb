@@ -1,33 +1,20 @@
 
 <div class='col-12'>
-<div class='container'>
+  <div class='container'>
     <h1> Listings </h1>
-        <% @listings.each do |list|%>
-        <div class='listing_box'>
-          <h2>
-            <%= list.name %>
-          </h2>
-          <h4>
-            Description: <%= list.description%>
-          </h4>
-          <h4>
-            Price per night: <%= list.price%>
-          </h4>
+      <% @listings.each do |list|%>
+      <div class='listing_box'>
+        <h2> <%= list.name %> </h2>
+        <h4> Description: <%= list.description%> </h4>
+        <h4> Price per night: <%= list.price%> </h4>
       </div>
-        <%end%>
-</div>
+      <%end%>
+  </div>
 </div>
 
 <div class='rowSec'>
   <div class='col-12'>
-      <% if flash[:logged_in_warning]%>
-      <div class='alert logged_in_warning' id="logged_in_warning">
-        <span class="closebtn">&times;</span>
-          <%= flash[:logged_in_warning]%>
-        </div>
-      <% end %>
-
-      <% if flash[:log_out_notice]%>
+      <% if flash[:error]%>
         <div class='alert log_out_notice' id="log_out_notice">
           <span class="closebtn">&times;</span>
           <%= flash[:log_out_notice]%>
