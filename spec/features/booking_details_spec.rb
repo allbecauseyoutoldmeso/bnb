@@ -8,6 +8,7 @@ feature 'reviewing my bookings' do
       expect(current_path).to eq("/profile/requests/#{Booking.first.id}")
       expect(page).to have_content('Fantastic new kitchen')
       expect(page).to have_css('#message_button')
+      expect(page).to have_content(600)
   end
 
 end
