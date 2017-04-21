@@ -6,10 +6,12 @@
   </head>
 
 <div class='rowSec'>
+  <div class='col-5' id='name'>
     <%if current_user %>
-    <div class='col-5' id='name'>
-      <h3>Hello, <%=current_user.first_name%></h3>
+    <div class='alert name' id='name'>
+      Hello, <%=current_user.first_name%>
     </div>
+</div>
 
   <div class='col-7 flow_buttons'>
     <form action="/apartments/new">
@@ -35,6 +37,7 @@
 <% end %>
 </div>
 
+<div class='col-12'>
 <div class='container'>
     <h1> Listings </h1>
         <% @listings.each do |list|%>
@@ -51,28 +54,47 @@
       </div>
         <%end%>
 </div>
+</div>
 
 <div class='rowSec'>
   <div class='col-12'>
-    <h3>
       <% if flash[:logged_in_warning]%>
-        <div class='logged_in_warning' id="logged_in_warning">
+      <div class='alert logged_in_warning' id="logged_in_warning">
+        <span class="closebtn">&times;</span>
           <%= flash[:logged_in_warning]%>
         </div>
       <% end %>
 
       <% if flash[:log_out_notice]%>
-        <div class='log_out_notice' id="log_out_notice">
+        <div class='alert log_out_notice' id="log_out_notice">
+          <span class="closebtn">&times;</span>
           <%= flash[:log_out_notice]%>
         </div>
       <% end %>
 
       <% if flash[:listing_error] %>
-        <div class='listing_error' id="listing_error">
+        <div class='alert listing_error' id="listing_error">
+          <span class="closebtn">&times;</span>
           <%= error %>
         </div>
+      </div>
       <% end %>
-    </h3>
+    </div>
+
+    <script>
+    var close = document.getElementsByClassName("closebtn");
+    var i;
+
+    for (i = 0; i < close.length; i++) {
+      close[i].onclick = function(){
+        var div = this.parentElement;
+        div.style.opacity = "0";
+        setTimeout(function(){ div.style.display = "none"; }, 600);
+      }
+    }
+    </script>
+
+    </div>
   </div>
 </div>
 </html>
