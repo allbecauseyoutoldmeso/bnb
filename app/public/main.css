@@ -197,7 +197,6 @@ input:focus, input:hover{
 }
 
 .calendars  {
-  /*align-self: flex-end;*/
   display: flex;
   justify-content: center;
 
