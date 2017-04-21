@@ -36,4 +36,13 @@ feature 'User books a property' do
     expect { book_property }.not_to change {Booking.count}
     expect { book_property(from: "20/04/2017")}.not_to change {Booking.count}
   end
+
+  scenario 'unsuccessfully if try to book property with to and from dates outside previously booked dates' do
+    sign_up
+    add_property
+    book_property
+    Booking.first.update(:confirmed => true)
+    expect { book_property(from: '18/04/2017', to: '23/04/2017')}.not_to change {Booking.count}
+  end
+  
 end
