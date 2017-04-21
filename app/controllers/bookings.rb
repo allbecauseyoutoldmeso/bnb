@@ -12,7 +12,7 @@ class Bnb < Sinatra::Base
       Booking.create(confirmed: false,
                      from: params[:from],
                      to: params[:to],
-                     listing: Listing.first(params[:listing_id]),
+                     listing: Listing.get(params[:listing_id]),
                      user: current_user)
       redirect to '/profile/requests'
     end
