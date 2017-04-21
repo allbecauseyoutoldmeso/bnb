@@ -4,7 +4,9 @@
     <h1> Listings </h1>
       <% @listings.each do |list|%>
       <div class='listing_box'>
-        <h2> <%= list.name %> </h2>
+        <a href='booking/<%=list.name%>'>
+          <h2> <%= list.name %> </h2>
+        </a>
         <h4> Description: <%= list.description%> </h4>
         <h4> Price per night: <%= list.price%> </h4>
       </div>
