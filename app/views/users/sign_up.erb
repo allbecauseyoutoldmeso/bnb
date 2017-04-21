@@ -13,17 +13,11 @@
     </form>
   </div>
 
-
-
 </div>
   <h1>EEEK. B&B </h1>
   <h2> Please sign up below </h2>
 </div>
-<% if flash[:errors] && !flash[:errors].empty? %>
-  <% flash[:errors].each do |error| %>
-    <%= error %>
-  <% end %>
-<% end %>
+
 
 <div class='sign_up_box'>
 <h4>
@@ -45,9 +39,6 @@
      <input type='password' name='password_confirmation' required  />
    </label>
    <button class ='button' align='center'>Sign up</button>
- </div>
  </form>
  </h4>
  </div>
-
-</html>

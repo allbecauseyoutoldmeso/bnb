@@ -37,6 +37,24 @@
 <% end %>
 </div>
 
+
+<div class='col-12'>
+  <div class='container'>
+    <h1> Listings </h1>
+      <% @listings.each do |list|%>
+      <div class='listing_box'>
+        <h2> <%= list.name %> </h2>
+        <h4> Description: <%= list.description%> </h4>
+        <h4> Price per night: <%= list.price%> </h4>
+      </div>
+      <%end%>
+  </div>
+</div>
+
+<div class='rowSec'>
+  <div class='col-12'>
+      <% if flash[:error]%>
+
     <div class='container'>
       <h1> Listings </h1>
           <% @listings.each do |list|%>
@@ -65,6 +83,7 @@
         <% end %>
 
       <% if flash[:log_out_notice]%>
+
         <div class='alert log_out_notice' id="log_out_notice">
           <span class="closebtn">&times;</span>
           <%= flash[:log_out_notice]%>
@@ -94,5 +113,5 @@
     }
     </script>
 
-    </div>
-</html>
+
+

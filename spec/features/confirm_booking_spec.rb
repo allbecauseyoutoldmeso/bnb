@@ -4,6 +4,7 @@ feature 'Confirm bookings' do
     full_cycle
     log_in
     visit('/profile/requests')
+    click_link 'Makers'
   end
 
   scenario 'user can see booking requests' do

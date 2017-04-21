@@ -8,7 +8,7 @@ class Bnb < Sinatra::Base
     @listings = Listing.all
     erb :'apartments/index'
   end
-  
+
   post '/apartments' do
     @listing = Listing.new(name: params[:property_name],
                           description: params[:description],
@@ -17,7 +17,7 @@ class Bnb < Sinatra::Base
     if @listing.save
       redirect to '/apartments'
     else
-      flash.now[:listing_error] = "You have already listed this property"
+      flash.now[:errors] = ["You have already listed this property"]
     end
   end
 end
