@@ -6,12 +6,12 @@
   </head>
 
 <div class='rowSec'>
-  <div class='col-5' id='name'>
     <%if current_user %>
-    <div class='alert name' id='name'>
-      Hello, <%=current_user.first_name%>
+    <div class='col-5' id='name'>
+      <div class='alert name' id='name'>
+        Hello, <%=current_user.first_name%>
+      </div>
     </div>
-</div>
 
   <div class='col-7 flow_buttons'>
     <form action="/apartments/new">
@@ -37,53 +37,49 @@
 <% end %>
 </div>
 
-
-<div class='container'>
-
-<div class='col-12'>
-<div class='container'>
-
-    <h1> Listings </h1>
-        <% @listings.each do |list|%>
-        <div class='listing_box'>
-          <h2>
-            <%= list.name %>
-          </h2>
-          <h4>
-            Description: <%= list.description%>
-          </h4>
-          <h4>
-            Price per night: <%= list.price%>
-          </h4>
-      </div>
-        <%end%>
-</div>
-</div>
+    <div class='container'>
+      <h1> Listings </h1>
+          <% @listings.each do |list|%>
+          <div class='listing_box'>
+            <h2>
+              <%= list.name %>
+            </h2>
+            <h4>
+              Description: <%= list.description%>
+            </h4>
+            <h4>
+              Price per night: <%= list.price%>
+            </h4>
+        </div>
+          <%end%>
+    </div>
 
 <div class='rowSec'>
   <div class='col-12'>
+    <div class='alert_container'>
       <% if flash[:logged_in_warning]%>
       <div class='alert logged_in_warning' id="logged_in_warning">
         <span class="closebtn">&times;</span>
           <%= flash[:logged_in_warning]%>
         </div>
-      <% end %>
+        <% end %>
 
       <% if flash[:log_out_notice]%>
         <div class='alert log_out_notice' id="log_out_notice">
           <span class="closebtn">&times;</span>
           <%= flash[:log_out_notice]%>
         </div>
-      <% end %>
+        <% end %>
 
       <% if flash[:listing_error] %>
         <div class='alert listing_error' id="listing_error">
           <span class="closebtn">&times;</span>
           <%= error %>
         </div>
+        <% end %>
       </div>
-      <% end %>
-    </div>
+  </div>
+</div>
 
     <script>
     var close = document.getElementsByClassName("closebtn");

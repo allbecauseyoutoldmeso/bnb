@@ -152,6 +152,12 @@ input:focus, input:hover{
   min-width: 200px;
 }
 
+.alert_container {
+  width: 25%;
+  margin: 0 auto;
+  min-width: 100px;
+}
+
 .alert {
   font-family: 'Hind', sans-serif;
   padding: 5px 20px 5px 20px;
@@ -166,7 +172,7 @@ input:focus, input:hover{
 }
 
 .alert.logged_in_warning {background-color: #e7e7e7}
-.alert.log_out_notice {background-color: #e7e7e7}
+.alert.log_out_notice {background-color: #e7e7e7;}
 .alert.listing_error {background-color: #e7e7e7}
 .alert.name {
             background-color: #fcedea;
