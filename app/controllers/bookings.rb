@@ -6,7 +6,9 @@ class Bnb < Sinatra::Base
   end
 
   post '/booking' do
-    unless Listing.first(params[:listing_id]).unavailable_dates.include?(Date.parse(params[:from]) || Date.parse(params[:to]) )
+    selected_dates =[]
+    (Date.parse(params[:from])..Date.parse(params[:to])).each { |date| selected_dates << date }
+    if (Listing.first(params[:listing_id]).unavailable_dates & selected_dates).empty?
       Booking.create(confirmed: false,
                      from: params[:from],
                      to: params[:to],
