@@ -1,0 +1,15 @@
+<%=@booking.listing.name%>
+<%=@booking.user.first_name%> requested to book this property
+from <%=@booking.from%> to <%=@booking.to%>
+total price: <%=@booking.total_price.to_i%>
+
+<% if @booking.confirmed == false %>
+   <form method ='post'>
+     <button formaction = '/profile/requests/confirm' value='Confirm booking'>Confirm booking</button>
+     <button formaction = '/profile/requests/reject' value='Reject booking'>Reject booking</button>
+     <input type='hidden' name='booking_id' value='<%=@booking.id%>'/>
+   </form>
+<%end%>
+<form action='/profile/requests/message' method=post>
+  <input id='message_button' type='submit' value='Message <%=@booking.user.first_name%> '/>
+</form>

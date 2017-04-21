@@ -2,22 +2,15 @@
 
 Requests I've made
 <% current_user.bookings.each do |booking| %>
-  <%= booking.listing.name %>
+  <a href='/profile/requests/made/<%= booking.id %>'><%= booking.listing.name%></a>
   <%='Booking confirmed' if booking.confirmed %>
   <%='Booking rejected' if booking.rejected %>
 <% end %>
 
 Requests I've received
 <% current_user.listings.bookings.select { |booking| booking.rejected == false }.each do |booking| %>
-  <%= booking.listing.name %>
-  <% if booking.confirmed == false %>
-       <form method ='post'>
-         <button formaction = '/profile/requests/confirm' value='Confirm booking'>Confirm booking</button>
-         <button formaction = '/profile/requests/reject' value='Reject booking'>Reject booking</button>
-         <input type='hidden' name='booking_id' value='<%=booking.id%>'/>
-       </form>
-  <% elsif booking.confirmed == true %>
-
-    Booking confirmed.
-  <% end %>
+  <a href='/profile/requests/received/<%=booking.id %>'>
+    <%= booking.listing.name %>
+  </a>
+    <%= 'Booking confirmed' if booking.confirmed == true %>
 <% end %>
