@@ -1,52 +1,11 @@
-[![Stories in Ready](https://badge.waffle.io/emmpak/EEEKbnb.png?label=ready&title=Ready)](http://waffle.io/emmpak/EEEKbnb)
+* Group project for Week 6 at Makers.
 
-# Emil, Emily, Euge & Kate's BnB
+* Air BnB style website built using Sinatra.
 
-## User Stories
-```
-As an owner
-So that I can list a new space
-I would like to sign up
+* Users can list properties, or request to book a property.
 
-As an owner
-So that I can go into my profile
-I want to be able to log in
+* We're particularly proud of the calendar that only allows users to select dates that haven't been booked yet!
 
-As an owner
-So that I can earn money
-I would like to list a new space
+<img width="825" alt="screen shot 2017-05-14 at 16 54 36" src="https://cloud.githubusercontent.com/assets/25392162/26035547/2dbd58c0-38c6-11e7-934a-29784d6cb26b.png">
 
-As an owner
-So that I can earn more money
-I would like to be able to list multiple spaces
-
-As an owner
-So that I can advertise my space/spaces
-I would like to provide details of the name, description, and price per night of
-stay
-
-As an owner
-So that customers know when the space is available
-I would like to offer a range of dates
-
-As a customer
-So that I can pick a place
-I would like to see the spaces available
-
-As a customer
-So that I can make a booking
-I would like the owner to approve my request
-
-As a customer
-So that I don't end up without a place to stay
-I would like to be able to see already booked dates
-
-As an owner
-So that I can rent out my space
-I would like to confirm the customer's booking
-
-As a customer
-So that I can rent out a space
-I would like to submit a booking request
-```
-
+<img width="824" alt="screen shot 2017-05-14 at 16 55 07" src="https://cloud.githubusercontent.com/assets/25392162/26035548/3159ef02-38c6-11e7-8f30-3e4bc251c491.png">
