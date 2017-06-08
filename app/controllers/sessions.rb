@@ -1,5 +1,9 @@
 class Bnb < Sinatra::Base
 
+  get '/' do
+    redirect to '/sessions/new'
+  end
+
   get '/sessions/new' do
     if current_user
       redirect to '/apartments'
