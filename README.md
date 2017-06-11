@@ -10,7 +10,10 @@
 
 * You can visit the website <a href="https://eeekbnb.herokuapp.com">here</a>.
 
-<img width="824" alt="screen shot 2017-05-14 at 16 55 07" src="https://cloud.githubusercontent.com/assets/25392162/26035548/3159ef02-38c6-11e7-8f30-3e4bc251c491.png">
-
 * To be improved:  
 Due to time constraints styling remains incomplete.  But we're very pleased with the backend logic!
+
+
+<img width="824" alt="screen shot 2017-05-14 at 16 55 07" src="https://cloud.githubusercontent.com/assets/25392162/26035548/3159ef02-38c6-11e7-8f30-3e4bc251c491.png">
+
+
