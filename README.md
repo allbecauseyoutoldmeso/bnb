@@ -1,6 +1,6 @@
 * Group project for Week 6 at Makers.
 
-* Our group consisted of Emil Iliev, Emily Chai, Euge Guerrero and Kate Gleeson.
+* Our group consisted of Emil Iliev, Emily Chai, Euge Guerrero and Kate Gleeson (EEEK!).
 
 * Air BnB style website built using Sinatra.
 
